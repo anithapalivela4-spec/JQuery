@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Toggle Box</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .toggle-box {
+            width: 450px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .toggle-box h2 {
+            color: #16213e;
+            margin-bottom: 20px;
+        }
+
+        #paragraph {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 10px;
+            color: #333;
+        }
+
+        /* Button Color Changed */
+        #toggleBtn {
+            background: #e94560;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+        }
+
+        #toggleBtn:hover {
+            background: #c62f47;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="toggle-box">
+
+        <h2>Toggle Box</h2>
+
+        <button id="toggleBtn" class="btn">
+            Show Paragraph
+        </button>
+
+        <p id="paragraph">
+            jQuery is a fast and lightweight JavaScript library.
+            It makes HTML document manipulation, event handling,
+            animations, and AJAX much easier.
+        </p>
+
+    </div>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#toggleBtn").click(function () {
+
+                $("#paragraph").toggle();
+
+                if ($("#paragraph").is(":visible")) {
+
+                    $("#toggleBtn").text("Hide Paragraph");
+
+                } else {
+
+                    $("#toggleBtn").text("Show Paragraph");
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
